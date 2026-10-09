@@ -1,0 +1,44 @@
+# Punto 1
+n1 = float(input("Ingresa el primer número:"))
+n2 = float(input("Ingrese el segundo número:"))
+
+print(f"{n1} es mayor" if n1>n2 else f"{n2} es mayor")
+
+
+# Punto 2
+def asistencia(profesor,*alumnos):
+    print(f"profesor: {profesor}")
+    for asist in alumnos:
+        print(f"alumno:{asist}")
+    return alumnos
+
+alumnosPresentes= asistencia("Dario","Leandro","Fernando","Diego","Vanesa","Maximiliano")
+
+cons=input("Ingrese nombre alumno: ")
+
+resultado = " asistió a clases" if cons in alumnosPresentes else " faltó"
+
+print(f"El alumno {cons}{resultado}")
+
+
+# Punto 3
+n3 = float(input("Ingresa número para comprobar si es par:"))
+n4=2
+
+print("es par" if n3 % n4==0 else "es impar")
+
+# Punto 4 y 5
+def PromedioAlumno (nombreAlumno , *notas):
+    promedio= sum(notas) /len(notas) if len(notas) >=3 else None
+
+    if promedio is None:
+        print (f"Error {nombreAlumno}: se necesita al menos 3 notas para calcular el promedio")
+        return None
+
+    print(f"{nombreAlumno}: tiene un promedio de {promedio:.2f}")
+    return promedio
+
+
+PromedioAlumno("Juan", 6, 4)
+
+PromedioAlumno("Mario", 7, 8, 9)
